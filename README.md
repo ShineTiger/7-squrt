@@ -22,9 +22,9 @@
 - Tailwind
 
 ## 필요공부
-- 상태관리 라이브러리(redux)
+- TS를 이용해서 타입을 지정하기
 - tailwind 적용법
-- TS 
+
 
 ## 레이아웃
 ![7-squat_layout](https://user-images.githubusercontent.com/94972549/175818188-6fd63029-6b97-4d38-beed-39ff81049c4d.png)
