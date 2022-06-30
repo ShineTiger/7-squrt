@@ -1,18 +1,20 @@
-import { useState } from 'react';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [second,setSecond] = useState(0);
+  const [second, setSecond] = useState(0);
 
+  let newTime = 0;
   const countingSecond = () => {
-    setSecond(second+1);
-    console.log(second)
-  }
+    newTime++;
+    console.log(newTime);
+    setSecond(newTime);
+  };
 
   //카운트 시작버튼
   const startBtn = () => {
-    setInterval(countingSecond,1000)
-  }
+    setInterval(countingSecond, 1000);
+  };
 
   return (
     <div className="App">
