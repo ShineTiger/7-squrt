@@ -1,24 +1,28 @@
 import { useState } from "react";
 import "./App.css";
+import useInterval from "./hooks/useInterval";
 
 function App() {
-  const [second, setSecond] = useState(0);
+  const [second, setSecond] = useState<number>(0);
+  const [isPlaying, setPlaying] = useState<boolean>(false);
+  const delay: number = 1000;
 
-  let newTime = 0;
-  const countingSecond = () => {
-    newTime++;
-    console.log(newTime);
-    setSecond(newTime);
-  };
-
-  //카운트 시작버튼
-  const startBtn = () => {
-    setInterval(countingSecond, 1000);
-  };
+  useInterval(
+    () => {
+      setSecond(second + 1);
+    },
+    isPlaying ? delay : null
+  );
 
   return (
     <div className="App">
-      <button onClick={startBtn}>시작</button>
+      <button
+        onClick={() => {
+          setPlaying(!isPlaying);
+        }}
+      >
+        시작
+      </button>
       <p>{second}</p>
     </div>
   );
