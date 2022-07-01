@@ -14,6 +14,10 @@ function App() {
     isPlaying ? delay : null
   );
 
+  if (second === 2) {
+    setPlaying(!isPlaying);
+  }
+
   return (
     <div className="App">
       <button
