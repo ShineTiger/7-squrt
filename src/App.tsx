@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 import useInterval from "./hooks/useInterval";
 
@@ -13,12 +13,6 @@ function App() {
     },
     isPlaying ? delay : null
   );
-
-  useEffect(() => {
-    if (second === 2) {
-      setPlaying(!isPlaying);
-    }
-  }, [second]);
 
   return (
     <div className="App">
