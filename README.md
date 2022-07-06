@@ -27,7 +27,9 @@
 
 
 ## 레이아웃
-![7-squat_layout](https://user-images.githubusercontent.com/94972549/175818188-6fd63029-6b97-4d38-beed-39ff81049c4d.png)
+![7-squat_layout](https://user-images.githubusercontent.com/94972549/177479672-aa95659a-4450-42ea-91b1-80ab02a9ad7d.png)
+![7-squat_layout2](https://user-images.githubusercontent.com/94972549/177479812-7119667f-3a41-45ec-8646-ab719572e949.png)
+
 
 ## 목표기능
 
