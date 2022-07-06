@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./App.css";
 import useInterval from "./hooks/useInterval";
 
 function App() {
@@ -10,12 +9,19 @@ function App() {
   const [squatTime, setSquatTime] = useState<number>(0);
 
   //준비타이머
-  useInterval(
-    () => {
-      setTimer(timer + 1);
-    },
-    isReady ? 1000 : null
-  );
+  const ReadyTimer = () => {
+    useInterval(
+      () => {
+        setTimer(timer + 1);
+      },
+      isReady ? 1000 : null
+    );
+    return (
+      <>
+        <p>{timer}</p>
+      </>
+    );
+  };
 
   //준비타이머 종료
   useEffect(() => {
@@ -26,12 +32,19 @@ function App() {
   }, [timer]);
 
   //초 카운터
-  useInterval(
-    () => {
-      setSecond(second + 1);
-    },
-    isPlaying ? 1000 : null
-  );
+  const SecondCounter = () => {
+    useInterval(
+      () => {
+        setSecond(second + 1);
+      },
+      isPlaying ? 1000 : null
+    );
+    return (
+      <>
+        <p>{second}</p>
+      </>
+    );
+  };
 
   //스쿼트횟수 카운터
   useEffect(() => {
@@ -44,16 +57,16 @@ function App() {
 
   return (
     <div className="App">
+      <button
+        onClick={() => {
+          setReady(!isReady);
+        }}
+      >
+        시작
+      </button>
       <div>
-        <button
-          onClick={() => {
-            setReady(!isReady);
-          }}
-        >
-          시작
-        </button>
-        <p>{timer}</p>
-        <p>{second}</p>
+        <ReadyTimer />
+        <SecondCounter />
         <p>{squatTime}</p>
       </div>
     </div>
