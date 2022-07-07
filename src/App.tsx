@@ -7,6 +7,7 @@ function App() {
   const [second, setSecond] = useState<number>(0);
   const [isPlaying, setPlaying] = useState<boolean>(false);
   const [squatTime, setSquatTime] = useState<number>(0);
+  const [squatSet, setSquatSet] = useState<number>(0);
 
   //준비타이머
   const ReadyTimer = () => {
@@ -46,14 +47,20 @@ function App() {
     );
   };
 
-  //스쿼트횟수 카운터
+  //10초 리셋
   useEffect(() => {
-    for (let i = 1; i < 4; i++) {
-      if (second === 10 * i) {
-        setSquatTime((squat) => squat + 1);
-      }
+    if (second === 10) {
+      setSecond(0);
+      setSquatTime((squat) => squat + 1); //횟수 카운터
     }
   }, [second]);
+
+  //세트 카운터
+  useEffect(() => {
+    if (squatTime === 10) {
+      setSquatSet((set) => set + 1);
+    }
+  }, [squatTime]);
 
   return (
     <div className="App">
@@ -68,6 +75,7 @@ function App() {
         <ReadyTimer />
         <SecondCounter />
         <p>{squatTime}</p>
+        <p>{squatSet}</p>
       </div>
     </div>
   );
