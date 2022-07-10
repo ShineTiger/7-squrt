@@ -1,16 +1,15 @@
-import { useState, useEffect } from "react";
-import useInterval from "./hooks/useInterval";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Ready from "./pages/Ready";
 import Main from "./pages/Main";
 
 function App() {
   return (
-    <div className="App">
-      <div>
-        <Ready />
-        <Main />
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/Ready" element={<Ready />} />
+        <Route path="/Main" element={<Main />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
