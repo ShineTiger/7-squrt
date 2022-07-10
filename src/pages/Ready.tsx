@@ -7,6 +7,11 @@ const Ready = () => {
   const [isReady, setReady] = useState<boolean>(false);
   const [isPlaying, setPlaying] = useState<boolean>(false);
 
+  //시작버튼
+  const togglePlay = () => {
+    setReady(!isReady);
+  };
+
   //준비타이머
   const ReadyTimer = () => {
     useInterval(
@@ -32,13 +37,7 @@ const Ready = () => {
 
   return (
     <>
-      <button
-        onClick={() => {
-          setReady(!isReady);
-        }}
-      >
-        시작
-      </button>
+      <button onClick={togglePlay}>시작</button>
       <ReadyTimer />
     </>
   );
