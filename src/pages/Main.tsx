@@ -68,6 +68,20 @@ const Main = () => {
   useEffect(() => {
     if (second === 1) {
       setFrameImage("p1.gif");
+    } else if (second === 2) {
+      setFrameImage("p2.gif");
+    } else if (second === 3) {
+      setFrameImage("p3.gif");
+    } else if (second === 4) {
+      setFrameImage("p4.gif");
+    } else if (4 < second && second < 8) {
+      setFrameImage("p5.gif");
+    } else if (second === 8) {
+      setFrameImage("p3.gif");
+    } else if (second === 9) {
+      setFrameImage("p1.gif");
+    } else if (second === 0) {
+      setFrameImage("p0.gif");
     }
   }, [second]);
 
