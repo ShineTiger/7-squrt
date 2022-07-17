@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import useInterval from "../hooks/useInterval";
 import Ready from "./Ready";
@@ -9,8 +10,9 @@ const Main = () => {
   const [squatTime, setSquatTime] = useState<number>(0);
   const [squatSet, setSquatSet] = useState<number>(0);
   const [frameImage, setFrameImage] = useState("p0.gif");
-
   const play = true;
+
+  const navigate = useNavigate();
 
   //10초 리셋
   useEffect(() => {
@@ -45,6 +47,7 @@ const Main = () => {
   useEffect(() => {
     if (squatTime === 10) {
       setSquatSet((set) => set + 1);
+      navigate("/Rest");
     }
   }, [squatTime]);
 
