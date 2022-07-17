@@ -16,21 +16,6 @@ const Ready = () => {
     setReady(!isReady);
   };
 
-  //준비타이머
-  // const ReadyTimer = () => {
-  //   useInterval(
-  //     () => {
-  //       setTimer(timer + 1);
-  //     },
-  //     isReady ? 1000 : null
-  //   );
-  //   return (
-  //     <>
-  //       <p>{timer}</p>
-  //     </>
-  //   );
-  // };
-
   //준비타이머 종료
   useEffect(() => {
     if (timer === 3) {

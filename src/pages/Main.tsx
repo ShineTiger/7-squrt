@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import useInterval from "../hooks/useInterval";
 import Ready from "./Ready";
+import SecondCounter from "../components/SecondCounter";
 
 const Main = () => {
   const [second, setSecond] = useState<number>(0);
@@ -9,17 +10,7 @@ const Main = () => {
   const [squatSet, setSquatSet] = useState<number>(0);
   const [frameImage, setFrameImage] = useState("p0.gif");
 
-  //초 카운터
-  const SecondCounter = () => {
-    useInterval(() => {
-      setSecond(second + 1);
-    }, 1000);
-    return (
-      <>
-        <p>{second}</p>
-      </>
-    );
-  };
+  const play = true;
 
   //10초 리셋
   useEffect(() => {
@@ -59,7 +50,7 @@ const Main = () => {
 
   return (
     <div>
-      <SecondCounter />
+      <SecondCounter second={second} setSecond={setSecond} isPlay={play} />
       <p>{squatTime}</p>
       <p>{squatSet}</p>
       <img src={`/image/${frameImage}`} />
