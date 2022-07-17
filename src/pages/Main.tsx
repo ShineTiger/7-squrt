@@ -4,51 +4,16 @@ import useInterval from "../hooks/useInterval";
 import Ready from "./Ready";
 
 const Main = () => {
-  const [timer, setTimer] = useState<number>(0);
-  const [isReady, setReady] = useState<boolean>(false);
-
   const [second, setSecond] = useState<number>(0);
-  const [isPlaying, setPlaying] = useState<boolean>(false);
   const [squatTime, setSquatTime] = useState<number>(0);
   const [squatSet, setSquatSet] = useState<number>(0);
   const [frameImage, setFrameImage] = useState("p0.gif");
 
-  //시작버튼
-  const togglePlay = () => {
-    setReady(!isReady);
-  };
-
-  //준비타이머
-  const ReadyTimer = () => {
-    useInterval(
-      () => {
-        setTimer(timer + 1);
-      },
-      isReady ? 1000 : null
-    );
-    return (
-      <>
-        <p>{timer}</p>
-      </>
-    );
-  };
-
-  //준비타이머 종료
-  useEffect(() => {
-    if (timer === 3) {
-      setReady(false);
-      setPlaying(!isPlaying);
-    }
-  }, [timer]);
-
   //초 카운터
   const SecondCounter = () => {
-    useInterval(
-      () => {
-        setSecond(second + 1);
-      },
-      isPlaying ? 1000 : null
-    );
+    useInterval(() => {
+      setSecond(second + 1);
+    }, 1000);
     return (
       <>
         <p>{second}</p>
@@ -94,8 +59,6 @@ const Main = () => {
 
   return (
     <div>
-      <button onClick={togglePlay}>시작</button>
-      <ReadyTimer />
       <SecondCounter />
       <p>{squatTime}</p>
       <p>{squatSet}</p>
