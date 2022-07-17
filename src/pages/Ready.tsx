@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import useInterval from "../hooks/useInterval";
 
@@ -6,6 +7,8 @@ const Ready = () => {
   const [timer, setTimer] = useState<number>(0);
   const [isReady, setReady] = useState<boolean>(false);
   const [isPlaying, setPlaying] = useState<boolean>(false);
+
+  const navigate = useNavigate();
 
   //시작버튼
   const togglePlay = () => {
@@ -32,6 +35,7 @@ const Ready = () => {
     if (timer === 3) {
       setReady(false);
       setPlaying(!isPlaying);
+      navigate("/Main");
     }
   }, [timer]);
 
