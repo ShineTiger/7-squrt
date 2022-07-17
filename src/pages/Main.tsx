@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import useInterval from "../hooks/useInterval";
 import Ready from "./Ready";
 import SecondCounter from "../components/SecondCounter";
@@ -8,8 +8,9 @@ import SecondCounter from "../components/SecondCounter";
 const Main = () => {
   const [second, setSecond] = useState<number>(0);
   const [squatTime, setSquatTime] = useState<number>(0);
-  const [squatSet, setSquatSet] = useState<number>(0);
+  // const [squatSet, setSquatSet] = useState<number>(0);
   const [frameImage, setFrameImage] = useState("p0.gif");
+  const setSquatSet = useRef(0);
   const play = true;
 
   const navigate = useNavigate();
@@ -46,7 +47,7 @@ const Main = () => {
   //세트 카운터
   useEffect(() => {
     if (squatTime === 10) {
-      setSquatSet((set) => set + 1);
+      setSquatSet.current += 1;
       navigate("/Rest");
     }
   }, [squatTime]);
@@ -55,7 +56,7 @@ const Main = () => {
     <div>
       <SecondCounter second={second} setSecond={setSecond} isPlay={play} />
       <p>{squatTime}</p>
-      <p>{squatSet}</p>
+      <p>{setSquatSet.current}</p>
       <img src={`/image/${frameImage}`} />
     </div>
   );
