@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import useInterval from "../hooks/useInterval";
+import SecondCounter from "../components/SecondCounter";
 
 const Ready = () => {
   const [timer, setTimer] = useState<number>(0);
@@ -16,19 +17,19 @@ const Ready = () => {
   };
 
   //준비타이머
-  const ReadyTimer = () => {
-    useInterval(
-      () => {
-        setTimer(timer + 1);
-      },
-      isReady ? 1000 : null
-    );
-    return (
-      <>
-        <p>{timer}</p>
-      </>
-    );
-  };
+  // const ReadyTimer = () => {
+  //   useInterval(
+  //     () => {
+  //       setTimer(timer + 1);
+  //     },
+  //     isReady ? 1000 : null
+  //   );
+  //   return (
+  //     <>
+  //       <p>{timer}</p>
+  //     </>
+  //   );
+  // };
 
   //준비타이머 종료
   useEffect(() => {
@@ -42,7 +43,7 @@ const Ready = () => {
   return (
     <>
       <button onClick={togglePlay}>시작</button>
-      <ReadyTimer />
+      <SecondCounter second={timer} setSecond={setTimer} isPlay={isReady} />
     </>
   );
 };
