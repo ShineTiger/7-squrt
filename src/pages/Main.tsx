@@ -4,14 +4,29 @@ import { useState, useEffect, useRef } from "react";
 import useInterval from "../hooks/useInterval";
 import Ready from "./Ready";
 import SecondCounter from "../components/SecondCounter";
+import { Provider } from "react-redux";
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from "recoil";
 
 const Main = () => {
   const [second, setSecond] = useState<number>(0);
   const [squatTime, setSquatTime] = useState<number>(0);
   // const [squatSet, setSquatSet] = useState<number>(0);
   const [frameImage, setFrameImage] = useState("p0.gif");
-  const setSquatSet = useRef(0);
+  //const setSquatSet = useRef(0);
   const play = true;
+
+  const setCounter = atom({
+    key: "squatState",
+    default: 0,
+  });
+
+  const [squat, setSquat] = useRecoilState(setCounter);
 
   const navigate = useNavigate();
 
@@ -46,8 +61,8 @@ const Main = () => {
 
   //세트 카운터
   useEffect(() => {
-    if (squatTime === 10) {
-      setSquatSet.current += 1;
+    if (squatTime === 1) {
+      setSquat((set) => set + 1);
       navigate("/Rest");
     }
   }, [squatTime]);
@@ -56,7 +71,7 @@ const Main = () => {
     <div>
       <SecondCounter second={second} setSecond={setSecond} isPlay={play} />
       <p>{squatTime}</p>
-      <p>{setSquatSet.current}</p>
+      <p>{squat}</p>
       <img src={`/image/${frameImage}`} />
     </div>
   );
