@@ -1,7 +1,5 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import useInterval from "../hooks/useInterval";
 import SecondCounter from "../components/SecondCounter";
 
 const Ready = () => {
