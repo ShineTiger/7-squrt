@@ -7,13 +7,15 @@ import { RecoilRoot } from "recoil";
 function App() {
   return (
     <BrowserRouter>
-      <RecoilRoot>
-        <Routes>
-          <Route path="/" element={<Ready />} />
-          <Route path="/Main" element={<Main />} />
-          <Route path="/Rest" element={<Rest />} />
-        </Routes>
-      </RecoilRoot>
+      <div className="lg:w-96 md:w-96 sm:w-full h-screen mx-auto">
+        <RecoilRoot>
+          <Routes>
+            <Route path="/" element={<Ready />} />
+            <Route path="/Main" element={<Main />} />
+            <Route path="/Rest" element={<Rest />} />
+          </Routes>
+        </RecoilRoot>
+      </div>
     </BrowserRouter>
   );
 }
