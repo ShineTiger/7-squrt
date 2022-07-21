@@ -1,24 +1,15 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import useInterval from "../hooks/useInterval";
-import Ready from "./Ready";
 import SecondCounter from "../components/SecondCounter";
-import { Provider } from "react-redux";
 import {
-  RecoilRoot,
   atom,
-  selector,
   useRecoilState,
-  useRecoilValue,
 } from "recoil";
 
 const Main = () => {
   const [second, setSecond] = useState<number>(0);
   const [squatTime, setSquatTime] = useState<number>(0);
-  // const [squatSet, setSquatSet] = useState<number>(0);
   const [frameImage, setFrameImage] = useState("p0.gif");
-  //const setSquatSet = useRef(0);
   const play = true;
 
   const setCounter = atom({
