@@ -26,7 +26,10 @@ const Ready = () => {
   return (
     <div>
       <div className="vh100-center bg-slate-50">
-        <button onClick={togglePlay} className="circle-btn">
+        <button
+          onClick={togglePlay}
+          className={isReady ? "none" : "circle-btn"}
+        >
           시작
         </button>
         <SecondCounter second={timer} setSecond={setTimer} isPlay={isReady} />

@@ -44,6 +44,6 @@
   background-color: hsl(var(--n) / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
 }
-.circle-btn:active {
+.none {
   display: none;
 }
