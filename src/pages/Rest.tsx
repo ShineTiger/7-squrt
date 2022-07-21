@@ -26,7 +26,9 @@ const Rest = () => {
 
   return (
     <>
-      <button onClick={overRest}>휴식끝내기</button>
+      <button onClick={overRest} className="btn btn-wide">
+        휴식끝내기
+      </button>
       <SecondCounter second={timer} setSecond={setTimer} isPlay={play} />
     </>
   );

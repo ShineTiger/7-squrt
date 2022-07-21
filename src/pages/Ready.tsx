@@ -24,10 +24,14 @@ const Ready = () => {
   }, [timer]);
 
   return (
-    <>
-      <button onClick={togglePlay}>시작</button>
-      <SecondCounter second={timer} setSecond={setTimer} isPlay={isReady} />
-    </>
+    <div>
+      <div className="vh100-center bg-slate-50">
+        <button onClick={togglePlay} className="circle-btn">
+          시작
+        </button>
+        <SecondCounter second={timer} setSecond={setTimer} isPlay={isReady} />
+      </div>
+    </div>
   );
 };
 
