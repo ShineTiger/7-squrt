@@ -32,7 +32,12 @@ const Ready = () => {
         >
           시작
         </button>
-        <SecondCounter second={timer} setSecond={setTimer} isPlay={isReady} />
+        <SecondCounter
+          second={timer}
+          setSecond={setTimer}
+          isPlay={isReady}
+          className={isReady ? "countdown font-mono text-6xl" : "none"}
+        />
       </div>
     </div>
   );

@@ -29,7 +29,12 @@ const Rest = () => {
       <button onClick={overRest} className="btn btn-wide">
         휴식끝내기
       </button>
-      <SecondCounter second={timer} setSecond={setTimer} isPlay={play} />
+      <SecondCounter
+        second={timer}
+        setSecond={setTimer}
+        isPlay={play}
+        className="countdown font-mono text-6xl"
+      />
     </>
   );
 };

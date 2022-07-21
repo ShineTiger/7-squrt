@@ -1,10 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import SecondCounter from "../components/SecondCounter";
-import {
-  atom,
-  useRecoilState,
-} from "recoil";
+import { atom, useRecoilState } from "recoil";
 
 const Main = () => {
   const [second, setSecond] = useState<number>(0);
@@ -60,7 +57,12 @@ const Main = () => {
 
   return (
     <div>
-      <SecondCounter second={second} setSecond={setSecond} isPlay={play} />
+      <SecondCounter
+        second={second}
+        setSecond={setSecond}
+        isPlay={play}
+        className="countdown font-mono text-6xl"
+      />
       <p>{squatTime}</p>
       <p>{squat}</p>
       <img src={`/image/${frameImage}`} />
