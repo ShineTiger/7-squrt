@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import SecondCounter from "../components/SecondCounter";
 
 const Rest = () => {
-  const [timer, setTimer] = useState<number>(0);
-  const [isReady, setReady] = useState<boolean>(false);
-  const [isPlaying, setPlaying] = useState<boolean>(false);
+  const [timer, setTimer] = useState(0);
+  const [isReady, setReady] = useState(false);
+  const [isPlaying, setPlaying] = useState(false);
   const play = true;
 
   const navigate = useNavigate();

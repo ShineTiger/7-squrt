@@ -4,8 +4,8 @@ import SecondCounter from "../components/SecondCounter";
 import { atom, useRecoilState } from "recoil";
 
 const Main = () => {
-  const [second, setSecond] = useState<number>(0);
-  const [squatTime, setSquatTime] = useState<number>(0);
+  const [second, setSecond] = useState(0);
+  const [squatTime, setSquatTime] = useState(0);
   const [frameImage, setFrameImage] = useState("p0.gif");
   const play = true;
 
