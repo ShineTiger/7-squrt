@@ -61,7 +61,7 @@ const Main = () => {
         second={second}
         setSecond={setSecond}
         isPlay={play}
-        className="countdown font-mono text-6xl"
+        className="font-mono text-6xl"
       />
       <p>{squatTime}</p>
       <p>{squat}</p>

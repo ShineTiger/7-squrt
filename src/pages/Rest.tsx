@@ -33,7 +33,7 @@ const Rest = () => {
         second={timer}
         setSecond={setTimer}
         isPlay={play}
-        className="countdown font-mono text-6xl"
+        className="font-mono text-6xl"
       />
     </>
   );

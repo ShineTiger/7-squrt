@@ -36,7 +36,7 @@ const Ready = () => {
           second={timer}
           setSecond={setTimer}
           isPlay={isReady}
-          className={isReady ? "countdown font-mono text-6xl" : "none"}
+          className={isReady ? "font-mono text-6xl" : "none"}
         />
       </div>
     </div>
