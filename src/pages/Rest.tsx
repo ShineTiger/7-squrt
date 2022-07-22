@@ -25,17 +25,17 @@ const Rest = () => {
   }, [timer]);
 
   return (
-    <>
-      <button onClick={overRest} className="btn btn-wide">
-        휴식끝내기
+    <div className="vh100-center">
+      <button onClick={overRest} className="circle-btn inline-block">
+        <SecondCounter
+          second={timer}
+          setSecond={setTimer}
+          isPlay={play}
+          className="font-mono text-6xl"
+        />
+        <p className="text-2xl">휴식끝내기</p>
       </button>
-      <SecondCounter
-        second={timer}
-        setSecond={setTimer}
-        isPlay={play}
-        className="font-mono text-6xl"
-      />
-    </>
+    </div>
   );
 };
 
