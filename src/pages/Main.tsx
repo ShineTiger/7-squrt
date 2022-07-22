@@ -56,16 +56,30 @@ const Main = () => {
   }, [squatTime]);
 
   return (
-    <div>
-      <SecondCounter
-        second={second}
-        setSecond={setSecond}
-        isPlay={play}
-        className="font-mono text-6xl"
-      />
-      <p>{squatTime}</p>
-      <p>{squat}</p>
-      <img src={`/image/${frameImage}`} />
+    <div className="vh100-center text-center">
+      <div className="basis-2/4">
+        <SecondCounter
+          second={second}
+          setSecond={setSecond}
+          isPlay={play}
+          className="font-mono text-6xl"
+        />
+        <div className="flex mt-8">
+          <div className="basis-2/4">
+            <p>횟수</p>
+            <p className="text-3xl">{squatTime}</p>
+          </div>
+          <div className="basis-2/4">
+            <p>완료한 세트</p>
+            <p className="text-3xl">{squat}</p>
+          </div>
+        </div>
+      </div>
+      <div className="basis-2/4 ">
+        <p className="text-center">
+          <img src={`/image/${frameImage}`} className="w-full" />
+        </p>
+      </div>
     </div>
   );
 };
