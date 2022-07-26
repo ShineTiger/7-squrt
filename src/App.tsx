@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Ready from "./pages/Ready";
 import Main from "./pages/Main";
 import Rest from "./pages/Rest";
+import Goal from "./pages/Goal";
 import { RecoilRoot } from "recoil";
 import "./App.css";
 
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Ready />} />
           <Route path="/Main" element={<Main />} />
           <Route path="/Rest" element={<Rest />} />
+          <Route path="/Goal" element={<Goal />} />
         </Routes>
       </RecoilRoot>
     </BrowserRouter>
