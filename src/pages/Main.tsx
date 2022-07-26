@@ -3,16 +3,16 @@ import { useState, useEffect, useRef } from "react";
 import SecondCounter from "../components/SecondCounter";
 import { atom, useRecoilState } from "recoil";
 
+const setCounter = atom({
+  key: "squatState",
+  default: 0,
+});
+
 const Main = () => {
   const [second, setSecond] = useState(0);
   const [squatTime, setSquatTime] = useState(0);
   const [frameImage, setFrameImage] = useState("p0.gif");
   const play = true;
-
-  const setCounter = atom({
-    key: "squatState",
-    default: 0,
-  });
 
   const [squat, setSquat] = useRecoilState(setCounter);
 
