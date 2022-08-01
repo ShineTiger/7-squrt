@@ -1,13 +1,19 @@
+import { Dispatch, SetStateAction } from "react";
 import useInterval from "../hooks/useInterval";
 
-interface SecondCounter {
+interface aboutProps {
   second: number;
-  setSecond: number;
+  setSecond: Dispatch<SetStateAction<number>>;
   isPlay: boolean;
-  className: String;
+  className: string;
 }
 
-const SecondCounter = ({ second, setSecond, isPlay, className }) => {
+const SecondCounter: React.FC<aboutProps> = ({
+  second,
+  setSecond,
+  isPlay,
+  className,
+}) => {
   useInterval(
     () => {
       setSecond(second + 1);
