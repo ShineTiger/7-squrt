@@ -12,9 +12,9 @@ const Main = () => {
   const [second, setSecond] = useState(0);
   const [squatTime, setSquatTime] = useState(0);
   const [frameImage, setFrameImage] = useState("pose-0.svg");
-  const play = true;
-
   const [squat, setSquat] = useRecoilState(setCounter);
+
+  const play = true;
 
   const navigate = useNavigate();
 
@@ -54,6 +54,13 @@ const Main = () => {
       navigate("/Rest");
     }
   }, [squatTime]);
+
+  //달성페이지 이동
+  useEffect(() => {
+    if (squat === 3) {
+      navigate("/Goal");
+    }
+  }, [squat]);
 
   return (
     <div className="flex flex-wrap basis-full">
