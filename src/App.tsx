@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Start from "./pages/Start";
 import Ready from "./pages/Ready";
 import Main from "./pages/Main";
 import Rest from "./pages/Rest";
@@ -11,7 +12,7 @@ function App() {
     <BrowserRouter>
       <RecoilRoot>
         <Routes>
-          <Route path="/" element={<Ready />} />
+          <Route path="/" element={<Start />} />
           <Route path="/Main" element={<Main />} />
           <Route path="/Rest" element={<Rest />} />
           <Route path="/Ready" element={<Ready />} />
