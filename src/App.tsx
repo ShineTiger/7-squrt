@@ -14,6 +14,7 @@ function App() {
           <Route path="/" element={<Ready />} />
           <Route path="/Main" element={<Main />} />
           <Route path="/Rest" element={<Rest />} />
+          <Route path="/Ready" element={<Ready />} />
           <Route path="/Goal" element={<Goal />} />
         </Routes>
       </RecoilRoot>

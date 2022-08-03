@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import SecondCounter from "../components/SecondCounter";
+import SecondTimer from "../components/SecondTimer";
 
 const Rest = () => {
-  const [timer, setTimer] = useState(0);
+  const [timer, setTimer] = useState(60);
   const [isReady, setReady] = useState(false);
   const [isPlaying, setPlaying] = useState(false);
   const play = true;
@@ -12,12 +12,12 @@ const Rest = () => {
 
   //휴식끝내기
   const overRest = () => {
-    navigate("/Main");
+    navigate("/Ready");
   };
 
   //휴식타이머 종료
   useEffect(() => {
-    if (timer === 60) {
+    if (timer === 0) {
       setReady(false);
       setPlaying(!isPlaying);
       navigate("/Main");
@@ -27,7 +27,7 @@ const Rest = () => {
   return (
     <div className="vh100-center">
       <button onClick={overRest} className="circle-btn inline-block">
-        <SecondCounter
+        <SecondTimer
           second={timer}
           setSecond={setTimer}
           isPlay={play}

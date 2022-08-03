@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import SecondCounter from "../components/SecondCounter";
+import SecondTimer from "../components/SecondTimer";
 
 const Ready = () => {
-  const [timer, setTimer] = useState(0);
+  const [timer, setTimer] = useState(3);
   const [isReady, setReady] = useState(false);
   const [isPlaying, setPlaying] = useState(false);
 
@@ -16,7 +16,7 @@ const Ready = () => {
 
   //준비타이머 종료
   useEffect(() => {
-    if (timer === 3) {
+    if (timer === 0) {
       setReady(false);
       setPlaying(!isPlaying);
       navigate("/Main");
@@ -32,7 +32,7 @@ const Ready = () => {
         >
           시작
         </button>
-        <SecondCounter
+        <SecondTimer
           second={timer}
           setSecond={setTimer}
           isPlay={isReady}
