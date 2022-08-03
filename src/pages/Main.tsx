@@ -11,7 +11,7 @@ const setCounter = atom({
 const Main = () => {
   const [second, setSecond] = useState(0);
   const [squatTime, setSquatTime] = useState(0);
-  const [frameImage, setFrameImage] = useState("p0.gif");
+  const [frameImage, setFrameImage] = useState("pose-0.svg");
   const play = true;
 
   const [squat, setSquat] = useRecoilState(setCounter);
@@ -29,27 +29,27 @@ const Main = () => {
   //이미지렌더
   useEffect(() => {
     if (second === 1) {
-      setFrameImage("p1.gif");
+      setFrameImage("pose-1.svg");
     } else if (second === 2) {
-      setFrameImage("p2.gif");
+      setFrameImage("pose-2.svg");
     } else if (second === 3) {
-      setFrameImage("p3.gif");
+      setFrameImage("pose-3.svg");
     } else if (second === 4) {
-      setFrameImage("p4.gif");
+      setFrameImage("pose-4.svg");
     } else if (4 < second && second < 8) {
-      setFrameImage("p5.gif");
+      setFrameImage("pose-5.svg");
     } else if (second === 8) {
-      setFrameImage("p3.gif");
+      setFrameImage("pose-3.svg");
     } else if (second === 9) {
-      setFrameImage("p1.gif");
+      setFrameImage("pose-1.svg");
     } else if (second === 0) {
-      setFrameImage("p0.gif");
+      setFrameImage("pose-0.svg");
     }
   }, [second]);
 
   //세트 카운터
   useEffect(() => {
-    if (squatTime === 1) {
+    if (squatTime === 10) {
       setSquat((set) => set + 1);
       navigate("/Rest");
     }
@@ -78,7 +78,7 @@ const Main = () => {
       <div className="basis-full">
         <img
           src={`/image/${frameImage}`}
-          className="w-9/12 m-auto"
+          className="m-auto"
           alt="스쿼트이미지 가이드"
         />
       </div>
