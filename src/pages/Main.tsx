@@ -56,8 +56,8 @@ const Main = () => {
   }, [squatTime]);
 
   return (
-    <div className="vh100-center text-center">
-      <div className="basis-2/4">
+    <>
+      <div className="basis-2/4 text-center">
         <SecondCounter
           second={second}
           setSecond={setSecond}
@@ -80,7 +80,7 @@ const Main = () => {
           <img src={`/image/${frameImage}`} className="w-full" />
         </p>
       </div>
-    </div>
+    </>
   );
 };
 

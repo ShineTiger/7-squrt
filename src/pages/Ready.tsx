@@ -19,14 +19,12 @@ const Ready = () => {
 
   return (
     <div>
-      <div className="vh100-center bg-slate-50">
-        <SecondTimer
-          second={timer}
-          setSecond={setTimer}
-          isPlay={play}
-          className="font-mono text-6xl none"
-        />
-      </div>
+      <SecondTimer
+        second={timer}
+        setSecond={setTimer}
+        isPlay={play}
+        className="font-mono text-6xl"
+      />
     </div>
   );
 };

@@ -9,7 +9,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <div className="lg:w-96 md:w-96 sm:w-full h-screen mx-auto">
-      <App />
+      <div className="vh100-center bg-slate-50">
+        <App />
+      </div>
     </div>
   </React.StrictMode>
 );

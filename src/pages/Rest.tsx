@@ -25,7 +25,7 @@ const Rest = () => {
   }, [timer]);
 
   return (
-    <div className="vh100-center">
+    <>
       <button onClick={overRest} className="circle-btn inline-block">
         <SecondTimer
           second={timer}
@@ -35,7 +35,7 @@ const Rest = () => {
         />
         <p className="text-2xl">휴식끝내기</p>
       </button>
-    </div>
+    </>
   );
 };
 
