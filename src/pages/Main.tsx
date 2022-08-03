@@ -56,8 +56,8 @@ const Main = () => {
   }, [squatTime]);
 
   return (
-    <>
-      <div className="basis-2/4 text-center">
+    <div className="flex flex-wrap basis-full">
+      <div className="basis-full text-center">
         <SecondCounter
           second={second}
           setSecond={setSecond}
@@ -75,12 +75,14 @@ const Main = () => {
           </div>
         </div>
       </div>
-      <div className="basis-2/4 ">
-        <p className="text-center">
-          <img src={`/image/${frameImage}`} className="w-full" />
-        </p>
+      <div className="basis-full">
+        <img
+          src={`/image/${frameImage}`}
+          className="w-9/12 m-auto"
+          alt="스쿼트이미지 가이드"
+        />
       </div>
-    </>
+    </div>
   );
 };
 
