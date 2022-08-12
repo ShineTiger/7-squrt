@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   presets: [],
   darkMode: "media", // or 'class'
   theme: {
@@ -962,5 +962,5 @@ module.exports = {
     "active",
     "disabled",
   ],
-  plugins: [],
+  plugins: [require("daisyui")],
 };

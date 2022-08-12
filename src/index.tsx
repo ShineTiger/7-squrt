@@ -1,13 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <div className="lg:w-96 md:w-96 sm:w-full h-screen mx-auto">
+      <div className="vh100-center bg-slate-50">
+        <App />
+      </div>
+    </div>
   </React.StrictMode>
 );
 

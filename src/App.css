@@ -1,7 +1,45 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .App {
   text-align: center;
+}
+
+.vh100-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.circle-btn {
+  color: white;
+  display: inline-flex;
+  flex-shrink: 0;
+  cursor: pointer;
+  user-select: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-color: hsl(var(--n) / var(--tw-border-opacity));
+  text-align: center;
+  width: 16rem;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10rem;
+  height: 16rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 3rem;
+  line-height: 1em;
+  min-height: 3rem;
+  font-weight: 600;
+  text-transform: var(--btn-text-case, uppercase);
+  text-decoration-line: none;
+  border-width: var(--border-btn, 1px);
+  animation: button-pop var(--animation-btn, 0.25s) ease-out;
+  --tw-border-opacity: 1;
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--n) / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+}
+.none {
+  display: none;
 }
