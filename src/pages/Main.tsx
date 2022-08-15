@@ -12,7 +12,7 @@ const Main = () => {
   const [second, setSecond] = useState(0);
   const [squatTime, setSquatTime] = useState(0);
   const [frameImage, setFrameImage] = useState("pose-0.svg");
-  const [squat, setSquat] = useRecoilState(setCounter);
+  const [totalSquat, setTotalSquat] = useRecoilState(setCounter);
 
   const play = true;
 
@@ -50,17 +50,17 @@ const Main = () => {
   //세트 카운터
   useEffect(() => {
     if (squatTime === 10) {
-      setSquat((set) => set + 1);
+      setTotalSquat((set) => set + 1);
       navigate("/Rest");
     }
   }, [squatTime]);
 
   //달성페이지 이동
   useEffect(() => {
-    if (squat === 3) {
+    if (totalSquat === 3) {
       navigate("/Goal");
     }
-  }, [squat]);
+  }, [totalSquat]);
 
   return (
     <div className="flex flex-wrap basis-full">
@@ -78,7 +78,7 @@ const Main = () => {
           </div>
           <div className="basis-2/4">
             <p>완료한 세트</p>
-            <p className="text-3xl">{squat}</p>
+            <p className="text-3xl">{totalSquat}</p>
           </div>
         </div>
       </div>
