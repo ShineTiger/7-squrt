@@ -10,7 +10,6 @@ const setCounter = atom({
 
 const Main = () => {
   const [second, setSecond] = useState(0);
-  // const [squatTime, setSquatTime] = useState(0);
   const [frameImage, setFrameImage] = useState("pose-0.svg");
   const [totalSquat, setTotalSquat] = useRecoilState(setCounter);
   const squatTimeRef = useRef(0);
@@ -18,18 +17,6 @@ const Main = () => {
   const play = true;
 
   const navigate = useNavigate();
-
-  const increaseSquatTimeRef = () => {
-    squatTimeRef.current = squatTimeRef.current + 1;
-  };
-
-  //10초 리셋
-  // useEffect(() => {
-  //   if (second === 10) {
-  //     setSecond(0);
-  //     setSquatTime((squat) => squat + 1); //횟수 카운터
-  //   }
-  // }, [second]);
 
   //이미지렌더
   useEffect(() => {
@@ -59,14 +46,6 @@ const Main = () => {
       navigate("/Rest");
     }
   }, [second]);
-
-  //세트 카운터
-  // useEffect(() => {
-  //   if (squatTime === 10) {
-  //     setTotalSquat((set) => set + 1);
-  //     navigate("/Rest");
-  //   }
-  // }, [squatTime]);
 
   //달성페이지 이동
   useEffect(() => {
