@@ -1,7 +1,8 @@
 <h1 align="middle"> 7초 스쿼트 카운터 </h1>
-7초 스쿼트를 혼자서 할 수 있게 제작된 반응형 애플리케이션 입니다
-<img src="https://img.shields.io/badge/version-1.0.0-yellow">
-![github 레이아웃](https://user-images.githubusercontent.com/94972549/184343417-ede1c60c-7cd1-4265-86c4-6fd940f120bc.png)
+<p align="middle">7초 스쿼트를 혼자서 할 수 있게 제작된 반응형 애플리케이션 입니다</p>
+<p align="middle"><img src="https://img.shields.io/badge/version-1.0.0-yellow"></p>
+<img alt="레이아웃" src="https://user-images.githubusercontent.com/94972549/186824829-a31b6c50-fc04-4306-bd09-37b7b3466984.png" )
+
 
 # 7️⃣ 소개
 
