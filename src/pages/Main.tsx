@@ -10,21 +10,13 @@ const setCounter = atom({
 
 const Main = () => {
   const [second, setSecond] = useState(0);
-  const [squatTime, setSquatTime] = useState(0);
   const [frameImage, setFrameImage] = useState("pose-0.svg");
-  const [squat, setSquat] = useRecoilState(setCounter);
+  const [totalSquat, setTotalSquat] = useRecoilState(setCounter);
+  const squatTimeRef = useRef(0);
 
   const play = true;
 
   const navigate = useNavigate();
-
-  //10초 리셋
-  useEffect(() => {
-    if (second === 10) {
-      setSecond(0);
-      setSquatTime((squat) => squat + 1); //횟수 카운터
-    }
-  }, [second]);
 
   //이미지렌더
   useEffect(() => {
@@ -45,22 +37,22 @@ const Main = () => {
     } else if (second === 0) {
       setFrameImage("pose-0.svg");
     }
-  }, [second]);
-
-  //세트 카운터
-  useEffect(() => {
-    if (squatTime === 10) {
-      setSquat((set) => set + 1);
+    if (second === 10) {
+      setSecond(0);
+      squatTimeRef.current = squatTimeRef.current + 1;
+    }
+    if (squatTimeRef.current === 10) {
+      setTotalSquat((set) => set + 1);
       navigate("/Rest");
     }
-  }, [squatTime]);
+  }, [second]);
 
   //달성페이지 이동
   useEffect(() => {
-    if (squat === 3) {
+    if (totalSquat === 3) {
       navigate("/Goal");
     }
-  }, [squat]);
+  }, [totalSquat]);
 
   return (
     <div className="flex flex-wrap basis-full">
@@ -74,11 +66,11 @@ const Main = () => {
         <div className="flex mt-8">
           <div className="basis-2/4">
             <p>횟수</p>
-            <p className="text-3xl">{squatTime}</p>
+            <p className="text-3xl">{squatTimeRef.current}</p>
           </div>
           <div className="basis-2/4">
             <p>완료한 세트</p>
-            <p className="text-3xl">{squat}</p>
+            <p className="text-3xl">{totalSquat}</p>
           </div>
         </div>
       </div>
